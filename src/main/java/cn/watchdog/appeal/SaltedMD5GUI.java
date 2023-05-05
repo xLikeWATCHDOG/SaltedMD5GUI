@@ -14,7 +14,7 @@ public class SaltedMD5GUI extends JFrame implements ActionListener {
     private final JButton copyButton;
 
     public SaltedMD5GUI() {
-        setTitle("KinoMC Appeal System Password Generator");
+        setTitle("Password Generator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // 创建文本框和标签

@@ -10,10 +10,21 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
-test {
-    useJUnitPlatform()
+def buildInfo = [
+        buildDate: new Date().format("yyyy-MM-dd'T'HH:mm:ss.SSSZ"),
+        author   : 'xLikeWATCHDOG',
+        version  : this.version
+]
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'cn.watchdog.appeal.SaltedMD5GUI',
+                'Built-By': buildInfo.author,
+                'Built-Date': buildInfo.buildDate,
+                'Version': buildInfo.version
+        )
+    }
 }
